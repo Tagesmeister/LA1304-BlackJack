@@ -24,17 +24,17 @@ User Projekt ist ein BlackJack spiel, dass ich Javascript geschrieben ist.
 | 5    |   Muss       | Qualität       | Als User möchte ich, dass es die Karten wie in einem Kartendeck vorgeneriert wird, damit das Spiel realistisch bleibt.                           |
 | 6    |   Muss       | Qualität       | Als User möchte ich, dass man nur einen Einsatz setzen kann, damit das Spiel spannender gestaltet ist.                                 |
 | 7    |   Muss       | Qualität       | Als User möchte ich, dass man (nur) vor dem aufnehmen der ersten Karte doublen kann, um eine grössere Spannung in das Spiel zu bringen.                              |
-| 8 | Muss | Funktional | Als Benutzer möchte ich, dass man nach dem doublen keine weiteren Karten mehr aufnehmen darf, damit das doublen mit einem Risiko verbunden ist. |
-| 9 | Muss | Funktional | Als Benutzer möchte ich, dass der Dealer reihum Karten austeilt, bis jeder Spieler 2 Karten offen vor sich liegen hat, damit man mit dem Spiel anfangen kann. |
-| 10    |   Muss       | Funktional     |Als User möchte ich, dass ein BlackJack beim erhalten von einem Ass und einer Karte mit der Punktzahl 10 in Kraft tritt, damit man mit dem BlackJack eine hohe Gewinnchance hat.|
+| 8    |   Muss       | Funktional     | Als Benutzer möchte ich, dass man nach dem doublen keine weiteren Karten mehr aufnehmen darf, damit das doublen mit einem Risiko verbunden ist. |
+| 9    |   Muss       | Funktional     | Als Benutzer möchte ich, dass der Dealer Karten austeilt, bis der Spieler 2 Karten offen vor sich liegen hat, damit man mit dem Spiel anfangen kann. |
+| 10   |   Muss       | Funktional     |Als User möchte ich, dass ein BlackJack beim erhalten von einem Ass und einer Karte mit der Punktzahl 10 in Kraft tritt, damit man mit dem BlackJack eine hohe Gewinnchance hat.|
 | 11   |   Muss       | Rand           |Als User möchte ich, dass das Programm in Javascript geschrieben ist. |
 | 12   |   Muss       | Funktional     |Als User möchte ich, dass der Dealer seine erste Karte offen auf den Tisch legt, damit ich besser abwägen kann, ob ich eine weitere Karte nehmen soll oder nicht.|
 | 13   |   Muss       | Funktional     | Als User möchte ich, dass der Dealer, wenn alle Spieler fertig sind, so lange Karten zieht, bis er mindestens eine Punktzahl von 17 erreicht hat. |
 | 14   |   Muss       | Funktional     |Als User möchte ich, dass man ein Startkapital von 50 hat, damit man das Spiel am Anfang auch spielen kann.|
-| 15   |  Muss        | Fuktional  | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel x2 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
-| 16   |  Muss        | Fuktional  | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel mit einem Blackjack x2.5 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
-| 17 | Muss | Funktional | Als Benutzer möchte ich, dass wenn der Dealer beim Ziehen (wenn alle Spieler fertig sind) mehr als 21 Punkte hat, dass der Dealer verloren hat und alle Benutzer die nicht Overshootet haben gewinnen, damit der Benutzer mehr Gewinnchancen hat. |
-| 18 | Muss | Funktional | Als Benutzer möchte ich, dass wenn der Dealer und Ich gleich viel Punkte haben, und sich die Punkte innerhalb des Zahlenlimits befinden, dass ich meinen Wetteinsatz zurückerstatten bekomme, damit ich mein Geld nicht verliere. |
+| 15   |   Muss       | Fuktional      | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel x2 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
+| 16   |   Muss       | Fuktional      | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel mit einem Blackjack x2.5 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
+| 17   |   Muss       | Funktional     | Als Benutzer möchte ich, dass wenn der Dealer beim Ziehen (wenn alle Spieler fertig sind) mehr als 21 Punkte hat, dass der Dealer verloren hat und der Spieler, der nicht Overshootet ist gewinnen, damit der Benutzer mehr Gewinnchancen hat. |
+| 18   |   Muss       | Funktional     | Als Benutzer möchte ich, dass wenn der Dealer und Ich gleich viel Punkte haben, und sich die Punkte innerhalb des Zahlenlimits befinden, dass ich meinen Wetteinsatz zurückerstatten bekomme, damit ich mein Geld nicht verliere. |
 
 
 
@@ -42,22 +42,29 @@ User Projekt ist ein BlackJack spiel, dass ich Javascript geschrieben ist.
 
 | TC-№ | Ausgangslage | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| 1.1  |  Programm gestartet             |  Button(Karte ziehen)       |    **Karte**               |
+| 1.1  |  Programm gestartet                                                   |  Button(Karte ziehen)       |    **Karte**               |
 | 2.1  |  Programm gestartet User wollte keine Karten mehr ziehen.             |  *Nichts*       |    **Der Dealer deckt seine Karte auf und zieht je nach Zahlenkonto Karten.**               |
-| 3.1 |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 17          |    *Nichts*     |     "Spieler hat gewonnen, bekommt 10 auf das Konto."               |
+| 3.1  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 17          |    *Nichts*     |     "Spieler hat gewonnen, bekommt 10 auf das Konto."               |
 | 4.1  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 24, Dealer's Zahlenkonto = 17          |    *Nichts*     |     "Spieler hat sich überzogen, verlert den Einsatz 5."              |
 | 4.2  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 25          |    *Nichts*     |     "Spieler hat gewonnen, bekommt 10 auf das Konto."           |
+| 4.3  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 14          |    *Nichts*     |     *Dealer zieht eine Karte.*         |
+| 4.4  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 16          |    *Nichts*     |     *Dealer zieht eine Karte.*         |
+| 4.5  |    Programm gestartet, Einsatz = 5 Benutzer's Zahlenkonto = 20, Dealer's Zahlenkonto = 17          |    *Nichts*     |     *Dealer zieht keine Karte.*         |
 | 5.1  |  Programm gestartet             |    *Nichts*     |    **Kartendeck generiert**               |
-| 6.1  |  Programm gestartet User wollte keine Karte mehr ziehen, Dealer deckt auf und zieht Karten.             |    *Nichts*     |   1.Karte Dealer's Zahlenkonto = 16, 2.Karte Dealer's Zahlenkonto = 18.           |
-| 6.2  |  Programm gestartet User wollte keine Karte mehr ziehen, Dealer deckt auf und zieht Karten.             |    *Nichts*     |   1.Karte Dealer's Zahlenkonto = 14, 2.Karte Dealer's Zahlenkonto = 17.           |
-| 7.1  |  Programm gestartet User wird abgefragt, welchen Einsatz er setzten möchte (0.25 ,0.5, 1, 5, 10, 25, 50, 100          |    Button(5)     |   **Spiel beginnt mit dem Einsatz von 5.**        |
-| 7.1  |  Programm gestartet User wird abgefragt, welchen Einsatz er setzten möchte (0.25 ,0.5, 1, 5, 10, 25, 50, 100          |    zweimal Button(5)     |   "Nicht möglich, Sie können nur einen Einsatz geben."       |
-| 9.1  |  Programm gestartet User hat seinen ersten Zug mit dem Einsatz von 5        |    Button(Doublen)     |   **User gibt den doppelten Einsatz (10) und zieht eine Karte.**        |
-| 10.1  |  Programm gestartet Karten ausgeteilt, User hat eine 10 und ein Ass (BlackJack) mit einem Einsatz 5       |   *Nichts*      |   "Spieler hat gewonnen, bekommt 10 auf das Konto."        |
-| 11.1  |  Programm ist in Javascript geschrieben worden   |   *Nichts*      |   *Nichts*      |
-| 12.1  |  Programm gestartet, Karten wurden Ausgeteilt  |   *Nichts*      |   *dem User wurden 2 Karten ausgeteilt. Der Dealer auch, aber seie erste Karte ist verdeckt.*      |
-| 13.1  |  Programm ist gestartet, der User hat keine Karte mehr genommen |   *Nichts*      |   *Der Dealer deckt seine verdeckte Karte auf und zieht je nach Zahlenkontostand Karten.*      |
-| 13.1  |  Programm wurde gestartet|   *Nichts*      |   *Der User bekommt 50 als Startkapital.*      |
+| 6.1  |  Programm gestartet User wird abgefragt, welchen Einsatz er setzten möchte (0.25 ,0.5, 1, 5, 10, 25, 50, 100          |    Button(5)     |   **Spiel beginnt mit dem Einsatz von 5.**        |
+| 6.1  |  Programm gestartet User wird abgefragt, welchen Einsatz er setzten möchte (0.25 ,0.5, 1, 5, 10, 25, 50, 100          |    zweimal Button(5)     |   "Nicht möglich, Sie können nur einen Einsatz geben."       |
+| 7.1  |  Programm gestartet, Karten wurden ausgeteilt       |  *Double*      |   *Spieler verdoppelt seinen Einsatz und zieht eine Karte.*       |
+| 8.1  |  Programm gestartet User hat gedoublet       |    *Nichts*    |   "Sie dürfen keine weitere Karte Ziehen."       |
+| 9.1  | Programm wurde gestartet, Dealer teilt Karten aus. | *Nichts* | **Der Spieler hat zwei Karten.** |
+| 10.1 |  Programm gestartet Karten ausgeteilt, User hat eine 10 und ein Ass (BlackJack) mit einem Einsatz 5       |   *Nichts*      |   "Spieler hat gewonnen, bekommt 10 auf das Konto."        |
+| 11.1 |  Programm ist in Javascript geschrieben worden   |   *Nichts*      |   *Nichts*      |
+| 12.1 |  Programm gestartet, Karten wurden Ausgeteilt  |   *Nichts*      |   *dem User wurden 2 Karten ausgeteilt. Der Dealer auch, aber seie erste Karte ist verdeckt.*      |
+| 13.1 |  Programm ist gestartet, der User hat keine Karte mehr genommen |   *Nichts*      |   *Der Dealer deckt seine verdeckte Karte auf und zieht je nach Zahlenkontostand Karten.*      |
+| 14.1 |  Programm wurde gestartet|   *Nichts*      |   *Der User bekommt 50 als Startkapital.*      |
+| 15.1 |  Programm wurde gestartet, Spieler hat gewonnen|   *Nichts*      |   *Der User bekommt den doppelten Wert von seinem Einsatz auf sein Konto gutgeschrieben.*      |
+| 16.1 |  Programm wurde gestartet, Spieler hat mit einem BlackJack gewonnen|   *Nichts*      |    *Der User bekommt 2.5 Mal von seinem Einsatz auf sein Konto gutgeschrieben.*      |
+| 17.1 |  Programm wurde gestartet, der Dealer hat sich überspielt und der User nicht|   *Nichts*      |   *Der User bekommt das Doppelte von seinem Einsatz auf das Konto gutgeschrieben*      |
+| 18.1 |  Programm wurde gestartet, der Dealer und der Spieler haben die gleiche Zahlen im Zahlenkonto und sie sind oder unter 21|   *Nichts*      |   "Push" *Der Spieler bekommt seinen Einsatz zurück*      |
 
 
 ### 1.4 UseCase-Diagramm
