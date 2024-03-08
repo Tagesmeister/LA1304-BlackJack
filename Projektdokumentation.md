@@ -18,18 +18,25 @@ User Projekt ist ein BlackJack spiel, dass ich Javascript geschrieben ist.
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
 | 1    |   Muss       | Funktional     | Als User möchte ich, dass man eine Karte ziehen kann, damit ich weiter spielen kann.  |
-| 2    |   Muss       | Funktional     | Als User möchte ich, dass man auch keine Karten ziehen muss, wenn man nicht möchte, um die Zahl im Zahlenkonto zu behalten.  |
-| 3    |   Muss       | Funktional     | Als User möchte ich, dass man gewonnen hat, wenn man eine höhere Zahl als der Dealer hat.                                |
-| 4    |   Muss       | Funktional     | Als User möchte ich, dass 21 die höchste zahl ist, damit es einen Zahlenlimit gibt.                          |
+| 2    |   Muss       | Funktional     | Als User möchte ich, dass man auch keine Karte ziehen kann wenn man nicht möchte, falls man mit seiner aktuellen Punktzahl zufrieden ist oder keinen Overshoot riskieren möchte.  |
+| 3    |   Muss       | Funktional     | Als User möchte ich, dass man gewonnen hat, wenn man eine höhere Zahl als der Dealer hat die sich im Zahlenlimit befindet.                                |
+| 4    |   Muss       | Funktional     | Als User möchte ich, dass 17 die niedrigste und 21 die höchste Zahl des Zahlenlimits ist, damit es einen Zahlenlimit gibt.                          |
 | 5    |   Muss       | Qualität       | Als User möchte ich, dass es die Karten wie in einem Kartendeck vorgeneriert wird, damit das Spiel realistisch bleibt.                           |
-| 6    |   Muss       | Funktional     | Als User möchte ich, dass der Dealer nur bis 17 Karten ziehen darf, damit das Spiel nach regeln fungiert.                             |
-| 7    |   Muss       | Qualität       | Als User möchte ich, dass man nur einen Einsatz setzen kann, damit das Spiel spanender gestaltet ist.                                 |
-| 8    |   Muss       | Qualität       | Als User möchte ich, dass man beim ersten Zug doublen kann, um eine grössere Spannung in das Spiel zu bringen.                              |
-| 9    |   Muss       | Funktional     |Als User möchte ich, dass im ersten Zug bei einem Ass und 10 der User direkt gewonnen hat (BlackJack). |
-| 10   |   Muss       | Rand           |Als User möchte ich, dass das Programm in Javascript geschrieben wurde. |
-| 11   |   Muss       | Funktional     |Als User möchte ich, dass beim Start der Spieler 2 Karten bekommt, der Dealer auch, aber seine erste Karte ist verdeckt. |
-| 12   |   Muss       | Funktional     |Als User möchte ich, dass der Dealer seine verdeckte Karte aufdeckt, damit das Spiel nach Regeln fungiert.|
-| 13   |   Muss       | Funktional     |Als User möchte ich, dass man ein Startkapital von 50 hat, damit man das Spiel am Anfang auch spielen kann.|
+| 6    |   Muss       | Qualität       | Als User möchte ich, dass man nur einen Einsatz setzen kann, damit das Spiel spannender gestaltet ist.                                 |
+| 7    |   Muss       | Qualität       | Als User möchte ich, dass man (nur) vor dem aufnehmen der ersten Karte doublen kann, um eine grössere Spannung in das Spiel zu bringen.                              |
+| 8 | Muss | Funktional | Als Benutzer möchte ich, dass man nach dem doublen keine weiteren Karten mehr aufnehmen darf, damit das doublen mit einem Risiko verbunden ist. |
+| 9 | Muss | Funktional | Als Benutzer möchte ich, dass der Dealer reihum Karten austeilt, bis jeder Spieler 2 Karten offen vor sich liegen hat, damit man mit dem Spiel anfangen kann. |
+| 10    |   Muss       | Funktional     |Als User möchte ich, dass ein BlackJack beim erhalten von einem Ass und einer Karte mit der Punktzahl 10 in Kraft tritt, damit man mit dem BlackJack eine hohe Gewinnchance hat.|
+| 11   |   Muss       | Rand           |Als User möchte ich, dass das Programm in Javascript geschrieben ist. |
+| 12   |   Muss       | Funktional     |Als User möchte ich, dass der Dealer seine erste Karte offen auf den Tisch legt, damit ich besser abwägen kann, ob ich eine weitere Karte nehmen soll oder nicht.|
+| 13   |   Muss       | Funktional     | Als User möchte ich, dass der Dealer, wenn alle Spieler fertig sind, so lange Karten zieht, bis er mindestens eine Punktzahl von 17 erreicht hat. |
+| 14   |   Muss       | Funktional     |Als User möchte ich, dass man ein Startkapital von 50 hat, damit man das Spiel am Anfang auch spielen kann.|
+| 15   |  Muss        | Fuktional  | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel x2 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
+| 16   |  Muss        | Fuktional  | Als User möchte ich, dass der ausgeschüttete Gewinn bei einem gewonnen Spiel mit einem Blackjack x2.5 beträgt, damit ich für mein eingegangenes Risiko belohnt werde. |
+| 17 | Muss | Funktional | Als Benutzer möchte ich, dass wenn der Dealer beim Ziehen (wenn alle Spieler fertig sind) mehr als 21 Punkte hat, dass der Dealer verloren hat und alle Benutzer die nicht Overshootet haben gewinnen, damit der Benutzer mehr Gewinnchancen hat. |
+| 18 | Muss | Funktional | Als Benutzer möchte ich, dass wenn der Dealer und Ich gleich viel Punkte haben, und sich die Punkte innerhalb des Zahlenlimits befinden, dass ich meinen Wetteinsatz zurückerstatten bekomme, damit ich mein Geld nicht verliere. |
+
+
 
 ### 1.3 Testfälle
 
@@ -50,7 +57,7 @@ User Projekt ist ein BlackJack spiel, dass ich Javascript geschrieben ist.
 | 11.1  |  Programm ist in Javascript geschrieben worden   |   *Nichts*      |   *Nichts*      |
 | 12.1  |  Programm gestartet, Karten wurden Ausgeteilt  |   *Nichts*      |   *dem User wurden 2 Karten ausgeteilt. Der Dealer auch, aber seie erste Karte ist verdeckt.*      |
 | 13.1  |  Programm ist gestartet, der User hat keine Karte mehr genommen |   *Nichts*      |   *Der Dealer deckt seine verdeckte Karte auf und zieht je nach Zahlenkontostand Karten.*      |
-| 14.1  |  Programm wurde gestartet|   *Nichts*      |   *Der User bekommt 50 als Startkapital.*      |
+| 13.1  |  Programm wurde gestartet|   *Nichts*      |   *Der User bekommt 50 als Startkapital.*      |
 
 
 ### 1.4 UseCase-Diagramm
