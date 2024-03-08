@@ -1,0 +1,54 @@
+﻿.header {
+  background-color: green;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  height: 145px;
+  width: 100%;
+}
+
+.header a {
+  color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#logo {
+  max-width: 280px;
+  height: auto;
+  margin-top: 10px;
+}
+
+@font-face {
+  font-family: madimione-regular;
+  src: url("/fonts/MadimiOne-Regular.ttf");
+}
+
+body {
+  font-family: madimione-regular;
+  background-color: #63cf50;
+}
+
+.dealer,
+.player {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.dealer,
+.card {
+  border: 1px solid green;
+  margin: -10px;
+}
+
+.card {
+  display: inline-block;
+  height: 100px;
+  width: 60px;
+  background-color: red;
+}
