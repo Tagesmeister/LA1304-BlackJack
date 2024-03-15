@@ -8,27 +8,22 @@
   </head>
   <body>
     <div class="header">
-      <a href="#default">
-        <img id="logo"
-          src="/images/logo.png"
-        />
-      </a>
-      <div class="header-right">
-        <a class="active" href="#home">Home</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-      </div>
+      <img id="logo" src="./images/logo.png" />
     </div>
 
-    <div class="dealer">
-        <button id="dealer-button" onclick="addCardDealer('2')">Deal Card (Dealer)</button>
+    <div class="dealer" id="dealerside">
+      <p id="totalPointsDealer">Punkte:</p>
+      <div class="card-stack" id="cards">K: 52</div>
     </div>
-    <div class="player">
-        <button id="player-button" onclick="addCardPlayer('K')">Deal Card (Player)</button>
+    <div class="player" id="playerside">
+      <p id="totalPointsPlayer">Punkte:</p>
     </div>
 
     <div class="controls">
-        <button id="button" onclick="startGame()">Spiel starten</button>
+      <button id="hit" onclick="playerHit()">Hit</button>
+      <button id="stand" onclick="playerStand()">Stand</button>
+      <button id="buttonStartGame" onclick="startGame()">Spiel starten</button>
+      <p id="game-message"></p>
     </div>
 
     <script src="script.js"></script>
