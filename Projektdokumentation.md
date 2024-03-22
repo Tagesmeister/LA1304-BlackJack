@@ -107,7 +107,7 @@ Wir haben uns Entschieden, nach Planung vorzugehen.
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
-| 1.1  |       |          |        |
+| 1.1  |   05.04.2024    |    OK      |   Pascal Oestrich     |
 | ...  |       |          |        |
 
 ✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
