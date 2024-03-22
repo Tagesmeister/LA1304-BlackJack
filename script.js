@@ -61,8 +61,10 @@ function startGame() {
   buttonHit.disabled = false;
   buttonStand.disabled = false;
 
-
+if(enoughMoney(playerBet))
+{
   buttonDouble.disabled = false;
+}
 
   calculatePoints();
 }
