@@ -10,11 +10,18 @@ const buttonHit = document.getElementById("hit");
 const buttonStand = document.getElementById("stand");
 const totalPointsPlayer = document.getElementById("totalPointsPlayer");
 const totalPointsDealer = document.getElementById("totalPointsDealer");
+const labelPlayerBet = document.getElementById("playerBet");
+const labelPlayerBudget = document.getElementById("playerBudget");
 
+const pointBar = document.getElementById("pointBar");
+const buttonDouble = document.getElementById("doubleBet")
 //HTML Elemente verstecken:
 
 buttonHit.disabled = true;
 buttonStand.disabled = true;
+buttonDouble .disabled = true;
+buttonStartGame.disabled = true;
+
 totalPointsPlayer.hidden = true;
 totalPointsDealer.hidden = true;
 
@@ -29,38 +36,10 @@ let hiddenDealerCardValue = "?";
 let cardFromDeck = 1;
 let playerPoints = 0;
 let dealerPoints = 0;
+let playerBet = 0;
+let playerBudget = 50;
+let playerMovesCount = 0;
 
-function addCardDealer(text, visibility) {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  if (visibility) {
-    card.textContent = text;
-    card.style.backgroundColor = "white";
-  } else {
-    card.textContent = hiddenDealerCardValue;
-    card.id = "hiddenDealerCard";
-    card.style.backgroundColor = "red";
-    hiddenDealerCardValue = text;
-  }
-  dealerContainer.appendChild(card);
-  listDealerCards.push(giveValue(text));
-  updateCardStack();
-}
-
-function addCardPlayer(text) {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  card.textContent = text;
-  card.style.backgroundColor = "white";
-  playerContainer.appendChild(card);
-  listPlayerCards.push(giveValue(text));
-  updateCardStack();
-}
-
-function updateCardStack() {
-  cardFromDeck++;
-  cardStack.innerHTML = "K: " + (52 - (cardFromDeck - 1));
-}
 
 function startGame() {
   reset();
@@ -82,6 +61,9 @@ function startGame() {
   buttonHit.disabled = false;
   buttonStand.disabled = false;
 
+
+  buttonDouble.disabled = false;
+
   calculatePoints();
 }
 
@@ -92,11 +74,20 @@ function shuffleCards(cards) { //ChatGPT
     }
 }
 
+function updateCardStack() {
+  cardFromDeck++;
+  cardStack.innerHTML = "K: " + (52 - (cardFromDeck - 1));
+}
+
 function reset() {
+
+  playerMovesCount = 0;
   hiddenDealerCardValue = "?";
   gameMessage.innerHTML = "";
   listDealerCards = [];
   listPlayerCards = [];
+
+  pointBar.style.visibility = "hidden"
 
   //ChatGPT
   const playerCards = playerContainer.querySelectorAll(".card");
@@ -108,58 +99,6 @@ function reset() {
   dealerCards.forEach((card) => {
     dealerContainer.removeChild(card);
   });
-}
-
-function calculatePoints() {
-  //Player:
-
-  playerPoints = 0;
-
-  for (const card of listPlayerCards) {
-    playerPoints += card;
-  }
-  if (playerPoints > 21 && listPlayerCards.includes(11)) {
-    listPlayerCards[listPlayerCards.indexOf(11)] = 1;
-    calculatePoints();
-  }
-  if (playerPoints > 21) {
-    totalPointsPlayer.innerHTML = "Overshoot! (" + playerPoints + ")";
-    autoStand();
-  }
-  if (playerPoints === 21) {
-    autoStand();
-  }
-
-  //Dealer:
-
-  dealerPoints = 0;
-
-  if (document.getElementById("hiddenDealerCard").innerHTML === "?") {
-    dealerPoints = listDealerCards[0];
-    console.log(listDealerCards[0]);
-  } else {
-    for (const card of listDealerCards) {
-      dealerPoints += card;
-    }
-    if (dealerPoints < 17) {
-      addCardDealer(cards[cardFromDeck], true);
-      calculatePoints();
-    }
-    if (dealerPoints > 21 && listDealerCards.includes(11)) {
-      listDealerCards[listDealerCards.indexOf(11)] = 1;
-      calculatePoints();
-    }
-    if (dealerPoints > 21) {
-      totalPointsDealer.innerHTML = "Overshoot! (" + dealerPoints + ")";
-    }
-  }
-
-  totalPointsPlayer.hidden = false;
-  totalPointsDealer.hidden = false;
-  if (playerPoints <= 21 && !playerBlackJack())
-    totalPointsPlayer.innerHTML = "Punkte: " + playerPoints;
-  if (dealerPoints <= 21 && !dealerBlackJack())
-    totalPointsDealer.innerHTML = "Punkte: " + dealerPoints;
 }
 
 function giveValue(cardText) {
@@ -187,53 +126,42 @@ function giveValue(cardText) {
   }
 }
 
-function playerHit() {
-  addCardPlayer(cards[cardFromDeck]);
-  calculatePoints();
-}
-
-function playerStand() {
-  stand();
-  calculatePoints();
-  checkForWinner();
-}
-
-function autoStand() {
-  stand();
-  checkForWinner();
-}
-
-function stand() {
-  buttonHit.disabled = true;
-  buttonStand.disabled = true;
-  console.log("Dealer Card revealed!");
-  document.getElementById("hiddenDealerCard").innerHTML = hiddenDealerCardValue;
-  document.getElementById("hiddenDealerCard").style.backgroundColor = "white";
-}
-
 function checkForWinner() {
   console.log("Dealer: " + dealerPoints + " in " + listDealerCards.length);
   console.log("Player: " + playerPoints + " in " + listPlayerCards.length);
+
+  // Schaltet den Startbutton auf disable
+  buttonStartGame.disabled = true;
+
+  setPointBarVisible();
+
   if (dealerPoints > 21 && playerPoints <= 21) {
     gameMessage.innerHTML = "Der Spieler hat gewonnen! (1)";
+    addWinIntoBudget(2);
   } // Dealer overshootet und Spieler nicht
   if (dealerPoints > 21 && playerPoints > 21) {
     gameMessage.innerHTML = "Der Spieler verliert seinen Einsatz! (2)";
+    setPlayerBetToZero();
   } // Dealer und Spieler overshooten beide
   if (dealerPoints === playerPoints && playerPoints <= 21) {
     gameMessage.innerHTML = "Push! (3)";
+    addWinIntoBudget(1);
   } // Push (Beide haben gleich viel und der Spieler hat nicht overshootet)
   if (dealerPoints < playerPoints && playerPoints <= 21) {
     gameMessage.innerHTML = "Der Spieler hat gewonnen! (4)";
+    addWinIntoBudget(2);
   } // Der Spieler hat mehr Punkte als der Dealer aber weniger/gleich 21
   if (dealerPoints >= 17 && playerPoints < 17 && dealerPoints <= 21) {
     gameMessage.innerHTML = "Der Dealer hat gewonnen! (5)";
+    setPlayerBetToZero();
   } //Der Dealer hat 17 oder mehr Punkte und der Spieler hat weniger als 17
   if (dealerPoints <= 21 && playerPoints > 21) {
     gameMessage.innerHTML = "Der Dealer gewinnt! (6)";
+    setPlayerBetToZero();
   } // Spieler overshootet und Dealer nicht
   if (dealerPoints > playerPoints && dealerPoints <= 21) {
     gameMessage.innerHTML = "Der Dealer hat gewonnen! (7)";
+    setPlayerBetToZero();
   } // Der Dealer hat mehr Punkte als der Spieler aber weniger/gleich 21
 
   //BlackJack überprüfen:
@@ -252,14 +180,14 @@ function checkForWinner() {
 
     if (playerBlackJack() && !dealerBlackJack()) {
       gameMessage.innerHTML = "Der Spieler gewinnt (Black Jack)! (8)"; //Nur Spieler hat Blackjack
+      addWinIntoBudget(2.5);
     }
 
     if (!playerBlackJack() && dealerBlackJack()) {
       gameMessage.innerHTML = "Der Dealer gewinnt (Black Jack)! (9)"; //Nur Dealer hat Blackjack
+      addWinIntoBudget();
     }
   }
-
-  buttonStartGame.disabled = false;
 }
 
 function playerBlackJack() {
@@ -269,3 +197,56 @@ function playerBlackJack() {
 function dealerBlackJack() {
   return dealerPoints === 21 && listDealerCards.length === 2;
 }
+
+
+function addInputPoints(moneyValue){
+
+  if(enoughMoney(moneyValue))
+  {
+    playerBudget -= moneyValue;
+    playerBet += moneyValue;
+  }
+
+  if(isBetHigherThenZero()){
+    buttonStartGame.disabled = false;
+  }
+  loadBudget();
+}
+
+function removeInputPoints(moneyValue){
+
+  if(enoughBet(moneyValue))
+  {
+    playerBudget += moneyValue;
+    playerBet -= moneyValue;
+  }
+  if(!isBetHigherThenZero()){
+    buttonStartGame.disabled = true;
+  }
+  loadBudget();
+
+}
+
+function addWinIntoBudget(multiplier){
+  let winValue = playerBet * multiplier;
+  playerBudget += winValue;
+  setPlayerBetToZero();
+  loadBudget();
+}
+
+function setPlayerBetToZero()
+{
+  playerBet = 0;
+  loadBudget();
+
+}
+
+function setPointBarVisible()
+{
+  pointBar.style.visibility = "visible";
+}
+
+function loadBudget(){
+  labelPlayerBudget.textContent = "Budget: " + playerBudget;
+  labelPlayerBet.innerHTML = "Bet: " + playerBet;
+  }

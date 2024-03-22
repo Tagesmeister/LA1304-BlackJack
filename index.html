@@ -20,12 +20,77 @@
     </div>
 
     <div class="controls">
-      <button id="hit" onclick="playerHit()">Hit</button>
       <button id="stand" onclick="playerStand()">Stand</button>
+      <button id="doubleBet" onclick="doubleBet()">double</button>
+      <button id="hit" onclick="playerHit()">Hit</button>
       <button id="buttonStartGame" onclick="startGame()">Spiel starten</button>
       <p id="game-message"></p>
+
+      <body onload="loadBudget()"></body>
+
+      <div id="betAndBudget">
+        <p id="playerBet">Bet: </p>
+        <p id="playerBudget">Budget: </p>
+      </div>
+      
+    <div id="pointBar">
+
+      <div class="pointDiv">
+        <p>0.25</p>
+      <button class="add" onclick="addInputPoints(0.25)">+</button>
+      <button class="remove" onclick="removePoints(0.25)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>0.50</p>
+        <button class="add" onclick="addInputPoints(0.50)">+</button>
+        <button class="remove" onclick="removeInputPoints(0.50)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>1</p>
+        <button class="add" onclick="addInputPoints(1)">+</button>
+        <button class="remove" onclick="removeInputPoints(1)">-</button>
+      </div>
+      
+      <div class="pointDiv">
+        <p>5</p>
+        <button class="add" onclick="addInputPoints(5)">+</button>
+        <button class="remove" onclick="removeInputPoints(5)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>10</p>
+        <button class="add" onclick="addInputPoints(10)">+</button>
+        <button class="remove" onclick="removeInputPoints(10)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>25</p>
+        <button class="add" onclick="addInputPoints(25)">+</button>
+        <button class="remove" onclick="removeInputPoints(25)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>50</p>
+        <button class="add" onclick="addInputPoints(50)">+</button>
+        <button class="remove" onclick="removeInputPoints(50)">-</button>
+      </div>
+
+      <div class="pointDiv">
+        <p>100</p>
+        <button class="add" onclick="addInputPoints(100)">+</button>
+        <button class="remove" onclick="removeInputPoints(100)">-</button>
+      </div>
+
+    </div>
+
     </div>
 
     <script src="script.js"></script>
+    <script src="player.js"></script>
+    <script src="dealer.js"></script>
+    <script src="calculator.js"></script>
+
   </body>
 </html>
