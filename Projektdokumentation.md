@@ -7,6 +7,9 @@ Pascal Oestrich, Marek von Rogall
 |  08.03.24  | 0.0.1 | Die Funktionen um dem Spieler und dem Dealer Karten hinzuzufügen wurde implementiert. |
 |  10.03.24  | 0.0.2 | Das Kartendeck wird generiert und beim ausgeben der Karten Stück für Stück aufgebraucht. |
 |  15.03.24  | 0.0.3 | Das Spiel berechnet die Punktzahl der ausgebenen Karten und überprüft wer gewonnen hat. |
+|  22.03.24  | 0.0.4 | Die Buttonslogik wurde implementiert + Gutschrift und verlust implementiert.|
+|  29.03.24  | 1.0 | Doublefunktion implementiert und Prgramm debugging.|
+
 
 
 ## 1 Informieren
