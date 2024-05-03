@@ -113,7 +113,29 @@ Wir haben uns Entschieden, nach Planung vorzugehen.
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
 | 1.1  |   05.04.2024    |    OK      |   Pascal Oestrich     |
-| ...  |       |          |        |
+| 2.1  |    05.04.2024    |     OK     |    Pascal Oestrich     |
+|  3.1 |   05.04.2024     |    OK      |   Pascal Oestrich     |
+|  4.1 |  05.04.2024      |   OK      |    Pascal Oestrich     |
+|  4.2 |  05.04.2024      |     OK     |   Pascal Oestrich      |
+|  4.3 |  05.04.2024      |       OK   |   Pascal Oestrich      |
+|  4.4 |   05.04.2024     | OK         |    Pascal Oestrich     |
+|  4.5 |   05.04.2024     |   OK       |     Pascal Oestrich    |
+|  5.1 |   05.04.2024     |     OK     |    Pascal Oestrich     |
+|  6.1 |   05.04.2024     |       OK   |    Pascal Oestrich     |
+|  7.1 |   05.04.2024     | OK         |    Pascal Oestrich     |
+|  8.1 |   05.04.2024     |   OK       |    Pascal Oestrich     |
+|  9.1 |   05.04.2024     |     OK     |    Pascal Oestrich     |
+|  10.1 |   05.04.2024     |      OK    |   Pascal Oestrich      |
+| 11.1  |  05.04.2024      |        OK  |    Pascal Oestrich     |
+| 12.1  |   05.04.2024     |OK          |   Pascal Oestrich      |
+|  13.1 |   05.04.2024     |  OK        |   Pascal Oestrich      |
+|  14.1 |    05.04.2024    |    OK      |   Pascal Oestrich      |
+| 15.1  |   05.04.2024     |      OK    |   Pascal Oestrich      |
+| 16.1  |   05.04.2024     |        OK  |   Pascal Oestrich      |
+|  17.1 |   05.04.2024     |OK          |   Pascal Oestrich      |
+|  18.1 |   05.04.2024     |  OK        |   Pascal Oestrich      |
+
+
 
 ✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
 
