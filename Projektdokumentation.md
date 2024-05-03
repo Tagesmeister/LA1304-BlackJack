@@ -137,11 +137,11 @@ Wir haben uns Entschieden, nach Planung vorzugehen.
 
 
 
-✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
+Das Programm läuft optimal. Alle Testfälle hatten ein positives Ergebniss.
 
 
 
 ## 6 Mahara-Portfolios
 
-Pascal Oestrich:
-Marek von Rogall
+Pascal Oestrich: https://portfolio.bbbaden.ch/user/p-oestrich-inf22/la1400-blackjack-in-javascript
+Marek von Rogall: 
