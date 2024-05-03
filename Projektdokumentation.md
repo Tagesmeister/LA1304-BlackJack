@@ -13,7 +13,7 @@ Pascal Oestrich, Marek von Rogall
 
 ### 1.1 Ihr Projekt
 
-User Projekt ist ein BlackJack spiel, dass ich Javascript geschrieben ist.
+Unser Projekt ist ein BlackJack spiel, dass wir in Javascript geschrieben haben.
 
 ### 1.2 User Stories
 
