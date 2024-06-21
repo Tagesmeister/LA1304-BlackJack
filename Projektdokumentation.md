@@ -144,5 +144,4 @@ Das Programm läuft optimal. Alle Testfälle hatten ein positives Ergebniss.
 ## 6 Mahara-Portfolios
 
 Pascal Oestrich: https://portfolio.bbbaden.ch/user/p-oestrich-inf22/la1400-blackjack-in-javascript
-
-Marek von Rogall: 
+Marek von Rogall: https://portfolio.bbbaden.ch/view/view.php?t=6d5404156d68fb4db55e
